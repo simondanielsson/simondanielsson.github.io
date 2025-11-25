@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Books I've read in the past year
+title: Book recommendations
 permalink: /books/
 ---
 

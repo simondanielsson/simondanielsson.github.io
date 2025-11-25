@@ -22,7 +22,7 @@ title: Simon's blog
 email: simon.danielsson99@hotmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my blog. I write about ML, HPC, kernel dev, etc.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  simondanielsson
 
@@ -30,6 +30,7 @@ github_username:  simondanielsson
 theme: "minima"
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default.

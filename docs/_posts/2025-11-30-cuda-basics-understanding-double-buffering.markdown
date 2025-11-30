@@ -15,6 +15,12 @@ For instance, in the first part of the wave, some data is being read from memory
 When it's time for the next wave, we must ensure that the writes from the previous wave _have all completed_ or else we risk reading old data during this wave.
 This leads to a race condition where you _might_ end up reading either updated or old data. 
 
+As an example, consider the following computational structure for a very simple implementation of the Kogge-Stone parallel scan algorith:
+
+![Kogge-Stone](../images/scan.png)
+
+This algorithm will compute the prefix sum for an array of values in a parallel fashion. As we can see, it uses on a wave-wise logic to iteratively compute the prefix sum for every index in the array. The synchronization required for the correctness of this algorithm should be clear from the image.
+
 The trivial fix for this race condition in CUDA land is to use two barriers `__syncthreads()`, one *before* the read in first part of the wave, and one *before* the write in the second part of the wave.
 This ensures that we always read up-to-date values written in the previous wave, and also that we don't update the memory in the second part of the wave before all threads have completed their read operations.
 

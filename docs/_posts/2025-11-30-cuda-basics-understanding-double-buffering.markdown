@@ -5,7 +5,7 @@ date:   2025-11-30 18:28:23 +0100
 categories: cuda-basics
 ---
 
-> There are numerous great resources (books, blogs, docs) for learning about both the basic and advanced topics in GPU programming (some recommendations can be found [here](../books.markdown)).
+> There are numerous great resources (books, blogs, docs) for learning about both the basic and advanced topics in GPU programming (some recommendations can be found [here](https://simondanielsson.github.io/about/)).
 > However, many of them leave out the fundamental optimization techniques that I see are being used over and over again. My intent is to through this series of "CUDA Basics" posts introduce and give an intuitive introduction to various optimization techniques that we employ when writing kernels.
 
 Double buffering is a technique to remove the synchronization required due to _write after read_ race conditions (or similarly, _read after write_). 

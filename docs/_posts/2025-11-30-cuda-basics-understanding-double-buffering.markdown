@@ -17,7 +17,7 @@ This leads to a race condition where you _might_ end up reading either updated o
 
 As an example, consider the following computational structure for a very simple implementation of the Kogge-Stone parallel scan algorith:
 
-![Kogge-Stone](../images/scan.png)
+<img src="{{site.url}}/images/scan.png" style="display: block; margin: auto;" />
 
 This algorithm will compute the prefix sum for an array of values in a parallel fashion. As we can see, it uses on a wave-wise logic to iteratively compute the prefix sum for every index in the array. The synchronization required for the correctness of this algorithm should be clear from the image.
 
